@@ -12,7 +12,7 @@
   "dependencies": {
     "axios": "^1.7.2",
     "ethereum-block-by-date": "^1.4.9",
-    "ethers": "^6.13.1",
+    "ethers": "^5.7.2",
     "mongodb": "^6.8.0"
   }
 }

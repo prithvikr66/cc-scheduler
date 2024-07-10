@@ -5,7 +5,7 @@ const { MongoClient } = require("mongodb");
 
 async function connectDB() {
   const uri =
-    "mongodb+srv://pkunofficial66:vQKK0tp2BwGvTbyt@cluster0.ipl2iic.mongodb.net/";
+    "mongodb+srv://pkunofficial66:MUkYEPxmC2f3mvYz@cluster0.7asx8tp.mongodb.net/";
   const client = new MongoClient(uri);
 
   try {
@@ -23,8 +23,7 @@ const walletAddress = "0x15e54c22f4195142222ED7130521E9636EC3cCEC";
 const contractAddress = "0x612E1726435fE38dD49A0B35b4065B56f49c8F11";
 const numDecimals = 6;
 
-const timestamp = "2024-07-10T13:20:40Z";
-
+const timestamp = new Date().toISOString();
 // Alchemy API key
 const apiKey = "P2xwp8gerO9lweNzM0VvuGWVwt3tr_Pv";
 
