@@ -5,7 +5,7 @@ const { MongoClient } = require("mongodb");
 
 async function connectDB() {
   const uri =
-    "mongodb+srv://pkunofficial66:MUkYEPxmC2f3mvYz@cluster0.7asx8tp.mongodb.net/";
+    "MONGO_URI_HERE";
   const client = new MongoClient(uri);
 
   try {
@@ -25,7 +25,7 @@ const numDecimals = 6;
 
 const timestamp = new Date().toISOString();
 // Alchemy API key
-const apiKey = "P2xwp8gerO9lweNzM0VvuGWVwt3tr_Pv";
+const apiKey = "API_KEY_HERE";
 
 const provider = new ethers.providers.AlchemyProvider(null, apiKey);
 const dater = new EthDater(provider);

@@ -4,8 +4,7 @@ const EthDater = require("ethereum-block-by-date");
 const { MongoClient } = require("mongodb");
 
 async function connectDB() {
-  const uri =
-    "mongodb+srv://pkunofficial66:vQKK0tp2BwGvTbyt@cluster0.ipl2iic.mongodb.net/";
+  const uri = "MONGO_URI_HERE";
   const client = new MongoClient(uri);
 
   try {
@@ -23,10 +22,10 @@ const walletAddress = "0x15e54c22f4195142222ED7130521E9636EC3cCEC";
 const contractAddress = "0x612E1726435fE38dD49A0B35b4065B56f49c8F11";
 const numDecimals = 6;
 
-const timestamp = "2024-07-10T13:20:40Z";
+const timestamp = new Date().toISOString();
 
 // Alchemy API key
-const apiKey = "P2xwp8gerO9lweNzM0VvuGWVwt3tr_Pv";
+const apiKey = "API_KEY_HERE";
 
 const provider = new ethers.providers.AlchemyProvider(null, apiKey);
 const dater = new EthDater(provider);
@@ -84,23 +83,19 @@ const main = async () => {
 };
 
 module.exports = async (req, res) => {
-    try {
-      await runMain();
-      res.status(200).json({ message: 'Cron job completed successfully' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'An error occurred during the cron job' });
-    }
-  };
-  
-const runMain = async () => {
   try {
-    await main();
-   
+    await runMain();
+    res.status(200).json({ message: "Cron job completed successfully" });
   } catch (error) {
-    console.log(error);
-  
+    console.error(error);
+    res.status(500).json({ error: "An error occurred during the cron job" });
   }
 };
 
-
+const runMain = async () => {
+  try {
+    await main();
+  } catch (error) {
+    console.log(error);
+  }
+};
