@@ -4,8 +4,7 @@ const EthDater = require("ethereum-block-by-date");
 const { MongoClient } = require("mongodb");
 
 async function connectDB() {
-  const uri =
-    "MONGO_URI_HERE";
+  const uri = "MONGO_URI_HERE";
   const client = new MongoClient(uri);
 
   try {
